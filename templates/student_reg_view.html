@@ -1,0 +1,34 @@
+{% extends 'admin_home.html' %}
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Roll_No</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+       <th scope="col">College_name</th>
+      <th scope="col">Phone_No</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for n in data %}
+    <tr>
+      <th scop="row">{{forloop.counter}}</th>
+      <td>{{n.roll_no}}</td>
+      <td>{{n.name}}</td>
+      <td>{{n.email}}</td>
+      <td>{{n.college_name}}</td>
+      <td>{{n.phone_number}}</td>
+      <td> <a href=" {% url 'update_view' n.id %}"> update</a></td>
+      <td> <a href=" {% url 'delete_view' n.id %}"> delete</a></td>
+
+
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+{% endblock %}

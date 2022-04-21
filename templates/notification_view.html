@@ -1,0 +1,28 @@
+{% extends 'admin_home.html' %}
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Date</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Notification</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for n in data %}
+    <tr>
+      <th scop="row">{{forloop.counter}}</th>
+      <td>{{n.date}}</td>
+      <td>{{n.subject}}</td>
+      <td>{{n.notification}}</td>
+
+
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+{% endblock %}
